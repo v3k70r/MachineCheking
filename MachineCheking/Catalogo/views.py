@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from .models import *
 
-# Create your views here.
+def listarCatalogo(request):
+    modelos = Modelo.objects.filter().order_by('categoriaModelo')
+    return render(request, 'Catalogo/listarCatalogo.html', {'modelos' : modelos})

@@ -57,7 +57,7 @@ ROOT_URLCONF = 'MachineCheking.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,3 +121,25 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+"""
+# --- DJANGO REGISTRATION REDUX SETTINGS START ---
+
+# One-week activation window; you may, of course, use a different value.
+ACCOUNT_ACTIVATION_DAYS = 7
+
+# Automatically log the user in.
+REGISTRATION_AUTO_LOGIN = True
+
+REGISTRATION_OPEN = True
+
+LOGIN_REDIRECT_URL = '/dashboard'
+LOGIN_URL = '/accounts/login'
+
+SITE_ID = 1
+# --- DJANGO REGISTRATION REDUX SETTINGS END ---
+"""

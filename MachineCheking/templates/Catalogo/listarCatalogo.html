@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Catalogo - Machine Checking</title>
+    </head>
+    <body>
+        <div><h1>Litado de catalogo</h1></div>
+
+        {%for modelo in modelos%}
+            <div>
+                <h2>{{ modelo.nombreModelo }}</h2>
+                <h4>{{ modelo.marcaModelo }}</h4>
+                <h4>{{ modelo.categoriaModelo }}</h4>
+                <p>{{ modelo.descripcion }}</p>
+            </div>
+        {% endfor %}
+    </body>
+</html>
